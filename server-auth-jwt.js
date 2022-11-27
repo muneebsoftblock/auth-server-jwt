@@ -7,14 +7,18 @@ const cors = require('cors');
 const pem2jwk = require('pem-jwk').pem2jwk;
 
  const privateKey = `-----BEGIN RSA PRIVATE KEY-----
-MIIBOgIBAAJBAK2VPb/HQOaXLzuXv9xq8yozH93TZbYhTUc9+u2ZWEyTKa4Yktfe
-744s60/NUgN/bD02yM8L2W1fohfrI8G4Z8kCAwEAAQJAPhjWt0W7xQIuxn3aCCtG
-hEE31C5tA4PUVnkozFkASpv/uQm+fqJddJALq51Pxd0T3h+9vpsbO6g7yX0H/2pP
-pQIhAODNeyDcue1usOe68GBTi/8FhYxuCSGnR2aR1mX6m/ZHAiEAxawWtS81bgQg
-XeiaNnnnEa4PeEGCq6UrEvvhCKJ+6W8CIACYyxDlRSEaQCH9XxICZsbAjwA2cpPC
-S/A7xuPybGOVAiAQomGqz5U0c95xaKCJkwqR307n9MNVRGnyiAWw31PEuwIhALXt
-3fR9uOQWAe/fMtIHgdnH9nEwBhhIesrQR/XFre02
+MIIBPAIBAAJBAPMnQBFsUMxP05b8qkm7MhUFLTNFc6fvNxxUTjGNVHL2pY3a3f0d
+rwnhUPKzMEdUR9d8RGEqX8l0wyfflSYnFRcCAwEAAQJBAPFB5p3i/SBbrDPJqyTR
+KlYU9s5CgQkFn4bqV1NvSXVuOZts1Sa61mvxOr4nr64Y35WE2MYQvWlFwzlDWGuh
+8lECIQD84mNik7CCK+F5Pp+SfWZ0wC9HTZCkRh+pMo7lxHI8RQIhAPYmK31x6hiU
+zmB5KdIwia/q1fmv76s85ZtYDNB8rjerAiAeAzhMYL7YFCEkZJxHpH5eaNizm68I
+8BGd4RQ4jMIKCQIhAKfCl/1lOAEM2iMSMRiaEB0fVjpYWGZCmNJpDkLB1xMFAiEA
+jl9WxawKpk095m3ud/xMra8rVNEbC+qa3veRRarK6vE=
 -----END RSA PRIVATE KEY-----`;
+ const publicKey = `-----BEGIN PUBLIC KEY-----
+MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAPMnQBFsUMxP05b8qkm7MhUFLTNFc6fv
+NxxUTjGNVHL2pY3a3f0drwnhUPKzMEdUR9d8RGEqX8l0wyfflSYnFRcCAwEAAQ==
+-----END PUBLIC KEY-----`;
 
 app.set('json spaces', 2);
 
@@ -26,7 +30,7 @@ app.get('/', (r, res) => res.json({ message: 'hi' }));
 app.get('/.well-known/jwks.json', async (req, res) => {
   try {
    
-    res.status(200).json({ keys: [pem2jwk(privateKey)] });
+    res.status(200).json({ keys: [pem2jwk(publicKey)] });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
