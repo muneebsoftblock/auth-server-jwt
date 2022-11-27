@@ -13,7 +13,7 @@ app.use(cors({ origin: 'http://localhost:3000' }));
 
 app.get('/', (r, res) => res.json({ message: 'hi' }));
 
-app.get('/api/jwks', async (req, res) => {
+app.get('/.well-known/jwks.json', async (req, res) => {
   try {
     const privateKey = `-----BEGIN RSA PRIVATE KEY-----
 MIIBOgIBAAJBAK2VPb/HQOaXLzuXv9xq8yozH93TZbYhTUc9+u2ZWEyTKa4Yktfe
