@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "./server-auth-jwt.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/server-auth-jwt.js"
+    }
+  ]
+}
