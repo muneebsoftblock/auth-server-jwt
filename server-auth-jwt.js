@@ -11,11 +11,19 @@ app.set('json spaces', 2);
 // Allow requests from client-side
 app.use(cors({ origin: 'http://localhost:3000' }));
 
-app.get('/', (r,res) => res.json({ message: 'hi' }));
+app.get('/', (r, res) => res.json({ message: 'hi' }));
 
 app.get('/api/jwks', async (req, res) => {
   try {
-    const privateKey = fs.readFileSync('private-key.txt');
+    const privateKey = `-----BEGIN RSA PRIVATE KEY-----
+MIIBOgIBAAJBAK2VPb/HQOaXLzuXv9xq8yozH93TZbYhTUc9+u2ZWEyTKa4Yktfe
+744s60/NUgN/bD02yM8L2W1fohfrI8G4Z8kCAwEAAQJAPhjWt0W7xQIuxn3aCCtG
+hEE31C5tA4PUVnkozFkASpv/uQm+fqJddJALq51Pxd0T3h+9vpsbO6g7yX0H/2pP
+pQIhAODNeyDcue1usOe68GBTi/8FhYxuCSGnR2aR1mX6m/ZHAiEAxawWtS81bgQg
+XeiaNnnnEa4PeEGCq6UrEvvhCKJ+6W8CIACYyxDlRSEaQCH9XxICZsbAjwA2cpPC
+S/A7xuPybGOVAiAQomGqz5U0c95xaKCJkwqR307n9MNVRGnyiAWw31PEuwIhALXt
+3fR9uOQWAe/fMtIHgdnH9nEwBhhIesrQR/XFre02
+-----END RSA PRIVATE KEY-----`;
     res.status(200).json({ keys: [pem2jwk(privateKey)] });
   } catch (error) {
     res.status(500).json({ error: error.message });
