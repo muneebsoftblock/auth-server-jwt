@@ -15,7 +15,7 @@ app.get('/', (r,res) => res.json({ message: 'hi' }));
 
 app.get('/api/jwks', async (req, res) => {
   try {
-    const privateKey = fs.readFileSync('privateKey.pem');
+    const privateKey = fs.readFileSync('private-key.pem');
     res.status(200).json({ keys: [pem2jwk(privateKey)] });
   } catch (error) {
     res.status(500).json({ error: error.message });
