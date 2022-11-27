@@ -11,6 +11,8 @@ app.set('json spaces', 2);
 // Allow requests from client-side
 app.use(cors({ origin: 'http://localhost:3000' }));
 
+app.get('/', (r,res) => res.json({ message: 'hi' }));
+
 app.get('/api/jwks', async (req, res) => {
   try {
     const privateKey = fs.readFileSync('privateKey.pem');
