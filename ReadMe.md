@@ -6,6 +6,7 @@ why do you wrote this code? what this code do? write steps from start to end.
 4. client passes this token to server for future requests
 5. if the token is expired or invalid then do not allow user to perform the action
 
+"Info inside JWT is public so do not store passwords in JWT, JWT can not be tempered, But It can be read."
 
 node backend.js
 {
