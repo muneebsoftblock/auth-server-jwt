@@ -79,7 +79,7 @@ const issueJwt = async (req, res) => {
         email: 'muneeb.softblock@gmail.com',
         // aud: 'urn:my-resource-server', // -> to be used in Custom Authentication as JWT Field
         iss: 'https://auth-server-jwt-six.vercel.app', // -> to be used in Custom Authentication as JWT Field
-        iat: 100,
+        iat: Math.floor(Date.now() / 1000),
         // exp: Math.floor(Date.now() / 1000) + 60 * 60,
       },
       privateKey,
