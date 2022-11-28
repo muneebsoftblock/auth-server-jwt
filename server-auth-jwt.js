@@ -46,7 +46,8 @@ app.set('json spaces', 2);
 
 // Allow requests from client-side
 // app.use(cors({ origin: 'http://localhost:3000' }));
-app.use(cors());
+app.use(cors({ origin: 'https://9d15-2400-adc5-436-1b00-85c6-2d1e-3ff3-ca0f.in.ngrok.io' }));
+// app.use(cors());
 
 app.get('/', (r, res) => res.json({ message: 'hi ' + Date() }));
 
