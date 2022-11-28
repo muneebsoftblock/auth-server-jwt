@@ -25,3 +25,68 @@ node frontend.js
     exp: 1669552865
   }
 }
+
+from https://mkjwk.org/
+
+Key Size
+2048
+
+Key Use
+Signature
+
+Algorithm
+RS256: RSASSA-PKCS1-v1_5 using SHA-256
+
+Key ID
+SHA-256
+
+Show X.509
+No
+
+Public and Private Keypair
+{
+    "p": "1SifZyR4FdBsy71JhQy21dVe9nnHOkZSXnFQY11VAcUUddLxocEDVnQY-MZ4QNOq-rzwsLwf0xGHSIocazEqZHEIpzWVZxFcEl-I4ILoRJifpvYQZgRKFGUNqLik4j-97YreawoYkh6RRBxfgTDbZ_Z0VsYQ9KmkDApWxKe-dMs",
+    "kty": "RSA",
+    "q": "p4cNyKqkGk5PyXLJI44RNT3HX93EhcietUgEPhQP4rnj44Ve0eRyEWhDVQBkG-fG0YHYSYC9JWLG2sOGTn4UwbVqLBX7kWzEMaTLypxmaJ9Oii8TWohWWaoKnxD89NCLJW0QTPq38KRFwGu-4pQqUKVIXbCK7ZCedvMwN256sDM",
+    "d": "a4XR-XNDn2E_HAyltLT6DuOopO7VsKTcfxozAmoBsqWy7jVG4R69jV4sAST9x4CICUT8vHkfWHXSNXzC4UA7GFxodcGi9XrxWTIlcE0HuQ0Nb-kYuqIDve4Z2kXA6WA8wOXuJrBf5uSzmnr7i36UjlXm5arGBapL7HTK0QCXsXaCX3kh6YIwA9T8hzH-2NyT5GyyWRASm_26el_RXQW-H7jzainw7EmEXGO3m4UyuD1pqjWISvDBw3YJJnINKl2chig6CV45AwfFm-rcG_CKhgVKdQpY0wdRVEJYOSP9Qnw8Lhl3AQjqO5F724dyXExgfldwbre7T0EfUoN6uc6FhQ",
+    "e": "AQAB",
+    "use": "sig",
+    "kid": "lfr5QMWsLjUILEfYIeii_adEPmgBPwKtv0nMCT6ld9g",
+    "qi": "CImhjb0A5xd5qaRKBkn8QtT7EPw8CBBpvecAWxpaj74G34aVS5MreIikTC6QnZV__GiRvBuuF4zT05oqGfkDJvWuWBnFTvpJFMC1vE62IZwRyF_UotCiXSys8rY9LtkrSgz3NrSYDXGok91RE2fFOPs5gC1rs8g41z0Ed3U7nGE",
+    "dp": "BwqpgWnGAcp53Z0qMZgC7jt3QKMzPqyWCgKqSi4KId3V2DKYwuQybQe2z3kW_eVAL7pQJTaBwqJAmtfdKnlcUicdxxBRGC-NoBnB1tDcRW_ZTlWwov4fSF8yPVGkOMksSA2fXV_fAey6lcpuKUFo7h1JKJiwdLSp86_fv-1esFM",
+    "alg": "RS256",
+    "dq": "l0umDCrn54YAEquisYSVT-MKUy7iU_xaMNfoVPQjYJyHDiyd9Kr-xW_HF1YyEu2gpgdBASjOKZxqgJmCixLcxhCD4Wq89ponGbp9_e5_ok71TGC1dtaYPYQO8ZcTDDnm4Jb92Le5NQ_2mo_0JYawLIMItuxAm8o3ArAgRH93N_c",
+    "n": "i33z4n4Y9MUAGlR8XaSA1ofHaHSwkqYm8wuxB5TKV600EbJ2CVztkdbOrwekPQaPaX9YAZxcIxLevOJxSpXkKV6PfrnaUq62_eT2Zi97yWU86ZGE96hNT6Bc9kNdU1pHq_j2Gyo9z5ZSoM7epwyNffe5zSkAGTfOsjDMHJ5qrvXv6ctYk3hTHfTMqzaSqo8bhjUiLhCM1I9BI-s_oJbW7q-NuWqXQzhnu86DJ7EHx_o1ADOBjiM56y9gJwLr799mtdMtOQfDIdLbM8Aq5-lfYL5z2LWH-LGpXOqVTyY7ss0EfKqXLFN_3rSI6vQj_MzTfEg9fKpgjseKBGsQPfrUcQ"
+}
+
+
+Public and Private Keypair Set
+{
+    "keys": [
+        {
+            "p": "1SifZyR4FdBsy71JhQy21dVe9nnHOkZSXnFQY11VAcUUddLxocEDVnQY-MZ4QNOq-rzwsLwf0xGHSIocazEqZHEIpzWVZxFcEl-I4ILoRJifpvYQZgRKFGUNqLik4j-97YreawoYkh6RRBxfgTDbZ_Z0VsYQ9KmkDApWxKe-dMs",
+            "kty": "RSA",
+            "q": "p4cNyKqkGk5PyXLJI44RNT3HX93EhcietUgEPhQP4rnj44Ve0eRyEWhDVQBkG-fG0YHYSYC9JWLG2sOGTn4UwbVqLBX7kWzEMaTLypxmaJ9Oii8TWohWWaoKnxD89NCLJW0QTPq38KRFwGu-4pQqUKVIXbCK7ZCedvMwN256sDM",
+            "d": "a4XR-XNDn2E_HAyltLT6DuOopO7VsKTcfxozAmoBsqWy7jVG4R69jV4sAST9x4CICUT8vHkfWHXSNXzC4UA7GFxodcGi9XrxWTIlcE0HuQ0Nb-kYuqIDve4Z2kXA6WA8wOXuJrBf5uSzmnr7i36UjlXm5arGBapL7HTK0QCXsXaCX3kh6YIwA9T8hzH-2NyT5GyyWRASm_26el_RXQW-H7jzainw7EmEXGO3m4UyuD1pqjWISvDBw3YJJnINKl2chig6CV45AwfFm-rcG_CKhgVKdQpY0wdRVEJYOSP9Qnw8Lhl3AQjqO5F724dyXExgfldwbre7T0EfUoN6uc6FhQ",
+            "e": "AQAB",
+            "use": "sig",
+            "kid": "lfr5QMWsLjUILEfYIeii_adEPmgBPwKtv0nMCT6ld9g",
+            "qi": "CImhjb0A5xd5qaRKBkn8QtT7EPw8CBBpvecAWxpaj74G34aVS5MreIikTC6QnZV__GiRvBuuF4zT05oqGfkDJvWuWBnFTvpJFMC1vE62IZwRyF_UotCiXSys8rY9LtkrSgz3NrSYDXGok91RE2fFOPs5gC1rs8g41z0Ed3U7nGE",
+            "dp": "BwqpgWnGAcp53Z0qMZgC7jt3QKMzPqyWCgKqSi4KId3V2DKYwuQybQe2z3kW_eVAL7pQJTaBwqJAmtfdKnlcUicdxxBRGC-NoBnB1tDcRW_ZTlWwov4fSF8yPVGkOMksSA2fXV_fAey6lcpuKUFo7h1JKJiwdLSp86_fv-1esFM",
+            "alg": "RS256",
+            "dq": "l0umDCrn54YAEquisYSVT-MKUy7iU_xaMNfoVPQjYJyHDiyd9Kr-xW_HF1YyEu2gpgdBASjOKZxqgJmCixLcxhCD4Wq89ponGbp9_e5_ok71TGC1dtaYPYQO8ZcTDDnm4Jb92Le5NQ_2mo_0JYawLIMItuxAm8o3ArAgRH93N_c",
+            "n": "i33z4n4Y9MUAGlR8XaSA1ofHaHSwkqYm8wuxB5TKV600EbJ2CVztkdbOrwekPQaPaX9YAZxcIxLevOJxSpXkKV6PfrnaUq62_eT2Zi97yWU86ZGE96hNT6Bc9kNdU1pHq_j2Gyo9z5ZSoM7epwyNffe5zSkAGTfOsjDMHJ5qrvXv6ctYk3hTHfTMqzaSqo8bhjUiLhCM1I9BI-s_oJbW7q-NuWqXQzhnu86DJ7EHx_o1ADOBjiM56y9gJwLr799mtdMtOQfDIdLbM8Aq5-lfYL5z2LWH-LGpXOqVTyY7ss0EfKqXLFN_3rSI6vQj_MzTfEg9fKpgjseKBGsQPfrUcQ"
+        }
+    ]
+}
+
+
+Public Key
+{
+    "kty": "RSA",
+    "e": "AQAB",
+    "use": "sig",
+    "kid": "lfr5QMWsLjUILEfYIeii_adEPmgBPwKtv0nMCT6ld9g",
+    "alg": "RS256",
+    "n": "i33z4n4Y9MUAGlR8XaSA1ofHaHSwkqYm8wuxB5TKV600EbJ2CVztkdbOrwekPQaPaX9YAZxcIxLevOJxSpXkKV6PfrnaUq62_eT2Zi97yWU86ZGE96hNT6Bc9kNdU1pHq_j2Gyo9z5ZSoM7epwyNffe5zSkAGTfOsjDMHJ5qrvXv6ctYk3hTHfTMqzaSqo8bhjUiLhCM1I9BI-s_oJbW7q-NuWqXQzhnu86DJ7EHx_o1ADOBjiM56y9gJwLr799mtdMtOQfDIdLbM8Aq5-lfYL5z2LWH-LGpXOqVTyY7ss0EfKqXLFN_3rSI6vQj_MzTfEg9fKpgjseKBGsQPfrUcQ"
+}

@@ -1,41 +1,45 @@
 require('dotenv').config(); // enables loading .env vars
 const jwt = require('jsonwebtoken');
-const fs = require('fs');
 const express = require('express');
 const app = express();
 const cors = require('cors');
 
-const rsaPemToJwk = require('rsa-pem-to-jwk');
-
 const privateKey = `-----BEGIN RSA PRIVATE KEY-----
-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
+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
 -----END RSA PRIVATE KEY-----
 `;
-const publicKey = `-----BEGIN PUBLIC KEY-----
-MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAPMnQBFsUMxP05b8qkm7MhUFLTNFc6fv
-NxxUTjGNVHL2pY3a3f0drwnhUPKzMEdUR9d8RGEqX8l0wyfflSYnFRcCAwEAAQ==
------END PUBLIC KEY-----
-`;
-const privateKey2 = `-----BEGIN RSA PRIVATE KEY-----
-MIIBOgIBAAJBALXsC7V5AqwQ8RmJIKnbzCiyR87Z03PBpXFUgSd1HpHkQjREhYcH
-F5oOQLTipPmZvu8hj+PdBHEv/rlXAyod/X8CAwEAAQJAOydbz1Bf3A9ONl1ub4z2
-36zIyKvvo84tu6IctPXSUOF4qR0orcfBPtTqRnm+I78Cmy4AlO6j2rI6XvyTU66f
-AQIhAPENz//jo90sPy89OLJl2e/YFJizz7hHMYs+hwcxA9fBAiEAwTOl05F1c60w
-MXQn4sxLFcXoFo4HL3XqfxgHbuM9JT8CIQDvyPWnbiKK2IDh1NyZWYe5dhDG9dcj
-UG6QPNrE5JUWAQIgOC6+wEGCeDsa0qbGmotyIkjE7xoqOMD/iioAr1xhgZ0CIBIn
-O1T08OL6pXWXAORJAc94Yc7Fp/8cgtFOu6EhalxJ
------END RSA PRIVATE KEY-----
-`;
-const publicKey2 = `-----BEGIN PUBLIC KEY-----
-MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALXsC7V5AqwQ8RmJIKnbzCiyR87Z03PB
-pXFUgSd1HpHkQjREhYcHF5oOQLTipPmZvu8hj+PdBHEv/rlXAyod/X8CAwEAAQ==
------END PUBLIC KEY-----
+const publicKey = `-----BEGIN RSA PUBLIC KEY-----
+MIIBCgKCAQEAi33z4n4Y9MUAGlR8XaSA1ofHaHSwkqYm8wuxB5TKV600EbJ2CVzt
+kdbOrwekPQaPaX9YAZxcIxLevOJxSpXkKV6PfrnaUq62/eT2Zi97yWU86ZGE96hN
+T6Bc9kNdU1pHq/j2Gyo9z5ZSoM7epwyNffe5zSkAGTfOsjDMHJ5qrvXv6ctYk3hT
+HfTMqzaSqo8bhjUiLhCM1I9BI+s/oJbW7q+NuWqXQzhnu86DJ7EHx/o1ADOBjiM5
+6y9gJwLr799mtdMtOQfDIdLbM8Aq5+lfYL5z2LWH+LGpXOqVTyY7ss0EfKqXLFN/
+3rSI6vQj/MzTfEg9fKpgjseKBGsQPfrUcQIDAQAB
+-----END RSA PUBLIC KEY-----
 `;
 
 app.set('json spaces', 2);
@@ -60,13 +64,6 @@ app.get('/certs', async (req, res) => {
         },
       ],
     });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-app.get('/.well-known/jwks2.json', async (req, res) => {
-  try {
-    res.send(publicKey);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
