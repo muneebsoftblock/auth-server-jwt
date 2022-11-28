@@ -39,7 +39,7 @@ app.get('/.well-known/jwks.json', async (req, res) => {
   }
 });
 
-app.get('/api/token', async (req, res) => {
+const issueJwt = async (req, res) => {
   try {
     const token = jwt.sign(
       {
@@ -58,27 +58,10 @@ app.get('/api/token', async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
-});
+};
 
-app.post('/api/token', async (req, res) => {
-  try {
-    const token = jwt.sign(
-      {
-        sub: 'Custom JWT for Web3Auth Custom Auth',
-        name: 'mzk',
-        email: 'muneeb.softblock@gmail.com',
-        // aud: 'urn:my-resource-server', // -> to be used in Custom Authentication as JWT Field
-        iss: 'https://auth-server-jwt-six.vercel.app', // -> to be used in Custom Authentication as JWT Field
-        iat: 100,
-        exp: Math.floor(Date.now() / 1000) + 60 * 60,
-      },
-      privateKey,
-      { algorithm: 'RS256', keyid: '1' },
-    );
-    res.status(200).json({ token });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
+app.get('/api/token', issueJwt);
+
+app.post('/api/token', issueJwt);
 
 const listener = app.listen(process.env.PORT || 8080, () => console.log('Listening on port ' + listener.address().port));
