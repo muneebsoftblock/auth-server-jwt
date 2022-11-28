@@ -39,6 +39,15 @@ app.get('/.well-known/jwks.json', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+app.get('/.well-known/jwks2.json', async (req, res) => {
+  try {
+    res.status(200).json({
+      keys: [publicKey],
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 
 const issueJwt = async (req, res) => {
   try {
