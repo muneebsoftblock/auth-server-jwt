@@ -1,4 +1,3 @@
-var jwk2pem = require('pem-jwk').jwk2pem;
 var jwk = {
   kty: 'RSA',
   e: 'AQAB',
@@ -7,5 +6,4 @@ var jwk = {
   alg: 'RS256',
   n: 'i33z4n4Y9MUAGlR8XaSA1ofHaHSwkqYm8wuxB5TKV600EbJ2CVztkdbOrwekPQaPaX9YAZxcIxLevOJxSpXkKV6PfrnaUq62_eT2Zi97yWU86ZGE96hNT6Bc9kNdU1pHq_j2Gyo9z5ZSoM7epwyNffe5zSkAGTfOsjDMHJ5qrvXv6ctYk3hTHfTMqzaSqo8bhjUiLhCM1I9BI-s_oJbW7q-NuWqXQzhnu86DJ7EHx_o1ADOBjiM56y9gJwLr799mtdMtOQfDIdLbM8Aq5-lfYL5z2LWH-LGpXOqVTyY7ss0EfKqXLFN_3rSI6vQj_MzTfEg9fKpgjseKBGsQPfrUcQ',
 };
-var pem = jwk2pem(jwk);
-console.log(pem);
+console.log(require('pem-jwk').jwk2pem(jwk));

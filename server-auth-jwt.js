@@ -41,13 +41,9 @@ HfTMqzaSqo8bhjUiLhCM1I9BI+s/oJbW7q+NuWqXQzhnu86DJ7EHx/o1ADOBjiM5
 3rSI6vQj/MzTfEg9fKpgjseKBGsQPfrUcQIDAQAB
 -----END RSA PUBLIC KEY-----
 `;
+app.use(cors());
 
 app.set('json spaces', 2);
-
-// Allow requests from client-side
-// app.use(cors({ origin: 'http://localhost:3000' }));
-app.use(cors({ origin: 'https://9d15-2400-adc5-436-1b00-85c6-2d1e-3ff3-ca0f.in.ngrok.io' }));
-// app.use(cors());
 
 app.get('/', (r, res) => res.json({ message: 'hi ' + Date() }));
 
@@ -80,7 +76,7 @@ const issueJwt = async (req, res) => {
         // aud: 'urn:my-resource-server', // -> to be used in Custom Authentication as JWT Field
         iss: 'https://auth-server-jwt-six.vercel.app', // -> to be used in Custom Authentication as JWT Field
         iat: Math.floor(Date.now() / 1000),
-        // exp: Math.floor(Date.now() / 1000) + 60 * 60,
+        exp: Math.floor(Date.now() / 1000) + 60 * 60,
       },
       privateKey,
       { algorithm: 'RS256', keyid: 'lfr5QMWsLjUILEfYIeii_adEPmgBPwKtv0nMCT6ld9g' },
