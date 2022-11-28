@@ -25,7 +25,8 @@ NxxUTjGNVHL2pY3a3f0drwnhUPKzMEdUR9d8RGEqX8l0wyfflSYnFRcCAwEAAQ==
 app.set('json spaces', 2);
 
 // Allow requests from client-side
-app.use(cors({ origin: 'http://localhost:3000' }));
+// app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors());
 
 app.get('/', (r, res) => res.json({ message: 'hi ' + Date() }));
 
@@ -43,7 +44,7 @@ const issueJwt = async (req, res) => {
   try {
     const token = jwt.sign(
       {
-        sub: 'Custom JWT for Web3Auth Custom Auth',
+        sub: '1234',
         name: 'mzk',
         email: 'muneeb.softblock@gmail.com',
         // aud: 'urn:my-resource-server', // -> to be used in Custom Authentication as JWT Field
