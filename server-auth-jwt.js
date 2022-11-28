@@ -46,7 +46,7 @@ app.use(cors());
 
 app.get('/', (r, res) => res.json({ message: 'hi ' + Date() }));
 
-app.get('/.well-known/jwks.json', async (req, res) => {
+app.get('/certs', async (req, res) => {
   try {
     res.status(200).json({
       keys: [
