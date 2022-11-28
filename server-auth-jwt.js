@@ -50,8 +50,14 @@ app.get('/certs', async (req, res) => {
   try {
     res.status(200).json({
       keys: [
-        rsaPemToJwk(privateKey, { use: 'sig', alg: 'RS256', keyid: 'xxUTjGNVHL2pY3a3f0drwnhUPKzMEdUR9d8R' }, 'public'),
-        rsaPemToJwk(privateKey2, { use: 'sig', alg: 'RS256', keyid: '3a3f0drwnhUPKzMExxUTjGNVHL2pYdUR9d8R' }, 'public'),
+        {
+          kty: 'RSA',
+          e: 'AQAB',
+          use: 'sig',
+          kid: 'lfr5QMWsLjUILEfYIeii_adEPmgBPwKtv0nMCT6ld9g',
+          alg: 'RS256',
+          n: 'i33z4n4Y9MUAGlR8XaSA1ofHaHSwkqYm8wuxB5TKV600EbJ2CVztkdbOrwekPQaPaX9YAZxcIxLevOJxSpXkKV6PfrnaUq62_eT2Zi97yWU86ZGE96hNT6Bc9kNdU1pHq_j2Gyo9z5ZSoM7epwyNffe5zSkAGTfOsjDMHJ5qrvXv6ctYk3hTHfTMqzaSqo8bhjUiLhCM1I9BI-s_oJbW7q-NuWqXQzhnu86DJ7EHx_o1ADOBjiM56y9gJwLr799mtdMtOQfDIdLbM8Aq5-lfYL5z2LWH-LGpXOqVTyY7ss0EfKqXLFN_3rSI6vQj_MzTfEg9fKpgjseKBGsQPfrUcQ',
+        },
       ],
     });
   } catch (error) {
