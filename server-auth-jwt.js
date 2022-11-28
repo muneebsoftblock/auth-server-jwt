@@ -94,6 +94,6 @@ const issueJwt = async (req, res) => {
 app.get('/api/token', issueJwt);
 
 app.post('/api/token', issueJwt);
-app.post('/authorize', issueJwt);
+app.get('/authorize', issueJwt);
 
 const listener = app.listen(process.env.PORT || 8080, () => console.log('Listening on port ' + listener.address().port));
