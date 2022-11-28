@@ -20,7 +20,8 @@ jl9WxawKpk095m3ud/xMra8rVNEbC+qa3veRRarK6vE=
 const publicKey = `-----BEGIN PUBLIC KEY-----
 MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAPMnQBFsUMxP05b8qkm7MhUFLTNFc6fv
 NxxUTjGNVHL2pY3a3f0drwnhUPKzMEdUR9d8RGEqX8l0wyfflSYnFRcCAwEAAQ==
------END PUBLIC KEY-----`;
+-----END PUBLIC KEY-----
+`;
 
 app.set('json spaces', 2);
 
@@ -33,7 +34,7 @@ app.get('/', (r, res) => res.json({ message: 'hi ' + Date() }));
 app.get('/.well-known/jwks.json', async (req, res) => {
   try {
     res.status(200).json({
-      keys: [rsaPemToJwk(privateKey, { use: 'sig', alg: 'RS256', keyid: '1' }, 'public')],
+      keys: [rsaPemToJwk(privateKey, { use: 'sig', alg: 'RS256', keyid: 'xxUTjGNVHL2pY3a3f0drwnhUPKzMEdUR9d8R' }, 'public')],
     });
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -62,7 +63,7 @@ const issueJwt = async (req, res) => {
         // exp: Math.floor(Date.now() / 1000) + 60 * 60,
       },
       privateKey,
-      { algorithm: 'RS256', keyid: '1' },
+      { algorithm: 'RS256', keyid: 'xxUTjGNVHL2pY3a3f0drwnhUPKzMEdUR9d8R' },
     );
     res.status(200).json({ token });
   } catch (error) {
