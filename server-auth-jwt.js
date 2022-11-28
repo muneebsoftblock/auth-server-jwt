@@ -32,7 +32,7 @@ app.get('/', (r, res) => res.json({ message: 'hi ' + Date() }));
 app.get('/.well-known/jwks.json', async (req, res) => {
   try {
     res.status(200).json({
-      keys: [rsaPemToJwk(privateKey, { use: 'sig' }, 'public')],
+      keys: [rsaPemToJwk(privateKey, { use: 'sig', alg: 'RS256', keyid: '1' }, 'public')],
     });
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -52,7 +52,7 @@ app.get('/api/token', async (req, res) => {
         // exp: Math.floor(Date.now() / 1000) + 60 * 60,
       },
       privateKey,
-      { algorithm: 'RS256', keyid: '955104a37fa903ed80c57145ec9e83edb29b0c45' },
+      { algorithm: 'RS256', keyid: '1' },
     );
     res.status(200).json({ token });
   } catch (error) {
@@ -73,7 +73,7 @@ app.post('/api/token', async (req, res) => {
         exp: Math.floor(Date.now() / 1000) + 60 * 60,
       },
       privateKey,
-      { algorithm: 'RS256', keyid: '955104a37fa903ed80c57145ec9e83edb29b0c45' },
+      { algorithm: 'RS256', keyid: '1' },
     );
     res.status(200).json({ token });
   } catch (error) {
