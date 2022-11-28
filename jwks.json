@@ -1,0 +1,20 @@
+{
+  "keys": [
+    {
+      "kty": "RSA",
+      "use": "sig",
+      "alg": "RS256",
+      "keyid": "xxUTjGNVHL2pY3a3f0drwnhUPKzMEdUR9d8R",
+      "n": "APMnQBFsUMxP05b8qkm7MhUFLTNFc6fvNxxUTjGNVHL2pY3a3f0drwnhUPKzMEdUR9d8RGEqX8l0wyfflSYnFRc",
+      "e": "AQAB"
+    },
+    {
+      "kty": "RSA",
+      "use": "sig",
+      "alg": "RS256",
+      "keyid": "3a3f0drwnhUPKzMExxUTjGNVHL2pYdUR9d8R",
+      "n": "ALXsC7V5AqwQ8RmJIKnbzCiyR87Z03PBpXFUgSd1HpHkQjREhYcHF5oOQLTipPmZvu8hj-PdBHEv_rlXAyod_X8",
+      "e": "AQAB"
+    }
+  ]
+}
