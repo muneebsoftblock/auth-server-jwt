@@ -83,7 +83,7 @@ const issueJwt = async (req, res) => {
         // exp: Math.floor(Date.now() / 1000) + 60 * 60,
       },
       privateKey,
-      { algorithm: 'RS256', keyid: 'xxUTjGNVHL2pY3a3f0drwnhUPKzMEdUR9d8R' },
+      { algorithm: 'RS256', keyid: 'lfr5QMWsLjUILEfYIeii_adEPmgBPwKtv0nMCT6ld9g' },
     );
     res.status(200).json({ token });
   } catch (error) {
