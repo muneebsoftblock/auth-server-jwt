@@ -42,9 +42,7 @@ app.get('/.well-known/jwks.json', async (req, res) => {
 });
 app.get('/.well-known/jwks2.json', async (req, res) => {
   try {
-    res.status(200).json({
-      keys: [publicKey],
-    });
+    res.send(publicKey);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
