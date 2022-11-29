@@ -70,11 +70,11 @@ const issueJwt = async (req, res) => {
   try {
     const token = jwt.sign(
       {
-        sub: '1234',
+        sub: '1234', // Unique id, You can use user email here or unique user id. ETH Wallet is generated on basis of this field.
         name: 'mzk',
         email: 'muneeb.softblock@gmail.com',
-        // aud: 'urn:my-resource-server', // -> to be used in Custom Authentication as JWT Field
-        iss: 'https://auth-server-jwt-six.vercel.app', // -> to be used in Custom Authentication as JWT Field
+        aud: 'urn:my-resource-server', // -> can be used as JWT Field
+        iss: 'https://auth-server-jwt-six.vercel.app', // -> can be used as JWT Field
         iat: Math.floor(Date.now() / 1000),
         exp: Math.floor(Date.now() / 1000) + 60 * 60,
       },
@@ -88,8 +88,6 @@ const issueJwt = async (req, res) => {
 };
 
 app.get('/api/token', issueJwt);
-
 app.post('/api/token', issueJwt);
-app.get('/authorize', issueJwt);
 
 const listener = app.listen(process.env.PORT || 8080, () => console.log('Listening on port ' + listener.address().port));
