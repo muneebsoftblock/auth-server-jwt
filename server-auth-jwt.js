@@ -68,15 +68,25 @@ app.get('/certs', async (req, res) => {
 
 const issueJwt = async (req, res) => {
   try {
+    // here we need to use python backend to confirm user id, user email, user password from backend
+    // for example:
+    // const user; // id 1234 name mzk email muneeb.softblock@gmail.com
+
+    // const user = await postApi('https://api.a.com/users/login/', {email: req.body.email, password: req.body.password});
+    // if(!user) {
+    //  res.status(500).json({ error: error.message });
+    //  return;
+    // }
+
     const token = jwt.sign(
       {
-        sub: '1234', // Unique id, You can use user email here or unique user id. ETH Wallet is generated on basis of this field.
-        name: 'mzk',
-        email: 'muneeb.softblock@gmail.com',
+        sub: '1234', // 'user.id', // comes from db, Unique id, You can use user email here or unique user id. ETH Wallet is generated on basis of this field.
+        name: 'user.name', // comes from db
+        email: 'user.email', // comes from db
         aud: 'urn:my-resource-server', // -> can be used as JWT Field
         iss: 'https://auth-server-jwt-six.vercel.app', // -> can be used as JWT Field
-        iat: Math.floor(Date.now() / 1000),
-        exp: Math.floor(Date.now() / 1000) + 60 * 60,
+        iat: Math.floor(Date.now() / 1000), // issued at
+        exp: Math.floor(Date.now() / 1000) + 60 * 60, // expiry of token at
       },
       privateKey,
       { algorithm: 'RS256', keyid: 'lfr5QMWsLjUILEfYIeii_adEPmgBPwKtv0nMCT6ld9g' },

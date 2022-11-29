@@ -1,6 +1,6 @@
 why do you wrote this code? what this code do? write steps from start to end.
 
-1. client sends his email and password to auth server
+1. client sends his email and password to auth server (we can use other auth methods later, like tap on you device to login, or enter otp to login)
 2. server creates a jwt token and send to client, jwt can also contain an expiry date after which it becomes useless
 3. client uses public key of server to decode this jwt token to get back his email, name and related data
 4. client passes this token to server for future requests
